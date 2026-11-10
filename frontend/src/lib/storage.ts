@@ -23,3 +23,4 @@ export function clearStudentId(): void {
 export function isValidBrn(brn: string): boolean {
   return /^\d{17}$/.test(brn);
 }
+

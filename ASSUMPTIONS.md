@@ -51,3 +51,4 @@ This document lists assumptions made where the specification was ambiguous or un
 
 - **Assumption**: The backend is solely responsible for enforcing the rule that `(held + confirmed) ≤ totalSeats`. The frontend trusts the backend's response and displays a "No Seats Available" message when `availableSeats` is 0, or shows the 409 Conflict error.
 - **Reasoning**: Concurrency control must be handled server-side. The frontend's role is to present accurate data and handle error responses gracefully.
+

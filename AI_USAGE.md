@@ -46,3 +46,4 @@ This document details which AI tools were used, in which parts, where AI made mi
 ## Conclusion
 
 AI was used as a coding assistant throughout the project. All generated code was reviewed and tested. The AI accelerated development significantly but required human oversight to ensure spec compliance.
+

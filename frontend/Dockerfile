@@ -15,7 +15,7 @@ RUN npm ci
 
 # Copy source and build
 COPY . .
-RUN npm run build
+RUN npm run build --webpack
 
 # ========================================
 # Stage 2: Production runner
@@ -44,3 +44,4 @@ ENV PORT=3000
 ENV HOSTNAME="0.0.0.0"
 
 CMD ["node", "server.js"]
+

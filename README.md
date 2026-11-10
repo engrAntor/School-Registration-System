@@ -92,3 +92,4 @@ dotnet test
 - **Error Handling**: User-friendly error messages for all failure scenarios
 - **Persistent Identity**: Birth Registration Number persisted in localStorage
 - **Docker Ready**: Full Docker Compose setup with PostgreSQL, backend, and frontend
+
