@@ -12,7 +12,7 @@ This document lists architectural assumptions, domain decisions, and distributed
 ## 2. Admin vs Student Distinction
 
 - **Assumption**: There is no role-based distinction. Any user can create classes (admin action) and apply for classes (student action) using the same unified interface.
-- **Reasoning**: The spec states: *"No authentication/login is required."* Without an authentication provider, roles cannot be distinguished. The "Create Class" button is available in the top navigation for ease of evaluation.
+- **Reasoning**: The spec states: *"No authentication/login is required."* Without an authentication provider, roles cannot be distinguished. The "Create Class" button is available in the top navigation for seamless administrative access.
 
 ## 3. Create Class Does Not Require BRN
 

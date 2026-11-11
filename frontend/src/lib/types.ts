@@ -1,6 +1,6 @@
 // ============================================================================
 // School Admission System — TypeScript Types
-// Matches API contracts from the assignment specification exactly
+// Matches system API contracts exactly
 // ============================================================================
 
 /** Status values for an application hold */
