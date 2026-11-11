@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net9.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="Mediator.Abstractions" />
+     <PackageReference Include="Mediator.SourceGenerator">
+			<PrivateAssets>all</PrivateAssets>
+		</PackageReference>
+		<PackageReference Include="FluentValidation.DependencyInjectionExtensions" />
+		<!-- Application needs EF Core to use DbSet<T> in the Interface -->
+		<PackageReference Include="Microsoft.EntityFrameworkCore" />
+	</ItemGroup>
+	<ItemGroup>
+		<!-- Application depends on Domain -->
+		<ProjectReference Include="..\Domain\Domain.csproj" />
+	</ItemGroup>
+</Project>

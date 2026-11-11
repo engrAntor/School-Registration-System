@@ -11,7 +11,9 @@ ENV NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL
 
 # Install dependencies
 COPY package.json package-lock.json* ./
-RUN npm ci
+RUN npm config set fetch-retry-mintimeout 20000 && \
+    npm config set fetch-retry-maxtimeout 120000 && \
+    npm install --frozen-lockfile || npm install
 
 # Copy source and build
 COPY . .
