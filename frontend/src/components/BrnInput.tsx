@@ -29,16 +29,16 @@ export function BrnInput() {
   };
 
   return (
-    <div className="flex items-center gap-2">
-      <User className="h-4 w-4 text-muted-foreground hidden sm:block" />
+    <div className="flex items-center gap-1.5 sm:gap-2">
+      <User className="h-4 w-4 text-muted-foreground hidden lg:block shrink-0" />
       <div className="relative">
         <Input
           type="text"
-          placeholder="17-digit Birth Reg. No."
+          placeholder="17-digit BRN"
           value={value}
           onChange={handleChange}
           maxLength={17}
-          className={`w-[220px] pr-8 font-mono text-sm ${
+          className={`w-[150px] xs:w-[170px] sm:w-[210px] md:w-[230px] pr-8 font-mono text-xs sm:text-sm h-9 sm:h-10 transition-all ${
             saved
               ? "border-emerald-500 focus-visible:ring-emerald-500"
               : value.length > 0
@@ -51,7 +51,9 @@ export function BrnInput() {
         )}
       </div>
       {value.length > 0 && !saved && (
-        <span className="text-xs text-amber-600 hidden md:block">{17 - value.length} digits remaining</span>
+        <span className="text-xs text-amber-600 hidden xl:block shrink-0 whitespace-nowrap">
+          {17 - value.length} digits left
+        </span>
       )}
     </div>
   );

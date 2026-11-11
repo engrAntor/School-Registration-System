@@ -153,52 +153,56 @@ export default function MyApplicationsPage() {
 
       {/* Applications Table */}
       {holds && holds.length > 0 && (
-        <Card>
+        <Card className="overflow-hidden">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <ClipboardList className="h-5 w-5" />
-              Applications ({holds.length})
-            </CardTitle>
+            <div className="flex items-center justify-between">
+              <CardTitle className="flex items-center gap-2">
+                <ClipboardList className="h-5 w-5" />
+                Applications ({holds.length})
+              </CardTitle>
+            </div>
             <CardDescription>
-              Click &ldquo;View Details&rdquo; to manage an application.
+              Click &ldquo;View Details&rdquo; to complete fee payment or view status.
             </CardDescription>
           </CardHeader>
-          <CardContent>
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHead>Class</TableHead>
-                  <TableHead>Hold ID</TableHead>
-                  <TableHead>Status</TableHead>
-                  <TableHead>Expires At</TableHead>
-                  <TableHead className="text-right">Actions</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {holds.map((hold) => (
-                  <TableRow key={hold.holdId}>
-                    <TableCell className="font-medium">{hold.className}</TableCell>
-                    <TableCell className="font-mono text-xs text-muted-foreground">
-                      {hold.holdId}
-                    </TableCell>
-                    <TableCell>
-                      <HoldStatusBadge status={hold.status} />
-                    </TableCell>
-                    <TableCell className="text-sm text-muted-foreground">
-                      {formatExpiry(hold.expiresAt)}
-                    </TableCell>
-                    <TableCell className="text-right">
-                      <Link href={`/holds/${hold.holdId}`}>
-                        <Button variant="ghost" size="sm" className="gap-1.5">
-                          <Eye className="h-3.5 w-3.5" />
-                          View Details
-                        </Button>
-                      </Link>
-                    </TableCell>
+          <CardContent className="p-0 sm:p-6">
+            <div className="overflow-x-auto">
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead className="min-w-[150px]">Class</TableHead>
+                    <TableHead className="min-w-[120px]">Hold ID</TableHead>
+                    <TableHead className="min-w-[100px]">Status</TableHead>
+                    <TableHead className="min-w-[180px]">Expires At</TableHead>
+                    <TableHead className="text-right min-w-[120px]">Actions</TableHead>
                   </TableRow>
-                ))}
-              </TableBody>
-            </Table>
+                </TableHeader>
+                <TableBody>
+                  {holds.map((hold) => (
+                    <TableRow key={hold.holdId} className="hover:bg-muted/50 transition-colors">
+                      <TableCell className="font-medium">{hold.className}</TableCell>
+                      <TableCell className="font-mono text-xs text-muted-foreground">
+                        {hold.holdId}
+                      </TableCell>
+                      <TableCell>
+                        <HoldStatusBadge status={hold.status} />
+                      </TableCell>
+                      <TableCell className="text-sm text-muted-foreground">
+                        {formatExpiry(hold.expiresAt)}
+                      </TableCell>
+                      <TableCell className="text-right">
+                        <Link href={`/holds/${hold.holdId}`}>
+                          <Button variant="ghost" size="sm" className="gap-1.5">
+                            <Eye className="h-3.5 w-3.5" />
+                            View Details
+                          </Button>
+                        </Link>
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </div>
           </CardContent>
         </Card>
       )}

@@ -96,15 +96,24 @@ export default function HoldDetailPage() {
   const isActionable = currentStatus === "HELD";
 
   return (
-    <div className="mx-auto max-w-2xl space-y-6">
+    <div className="mx-auto max-w-4xl space-y-6">
       {/* Back button */}
-      <Link
-        href="/my-applications"
-        className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
-      >
-        <ArrowLeft className="h-4 w-4" />
-        Back to My Applications
-      </Link>
+      <div className="flex items-center justify-between">
+        <Link
+          href="/my-applications"
+          className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
+        >
+          <ArrowLeft className="h-4 w-4" />
+          Back to My Applications
+        </Link>
+        <Link
+          href="/classes"
+          className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
+        >
+          <BookOpen className="h-4 w-4" />
+          Browse Classes
+        </Link>
+      </div>
 
       {/* Error State */}
       {holdError && (

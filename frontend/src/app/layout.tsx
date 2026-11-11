@@ -19,11 +19,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={`${inter.className} min-h-screen bg-background antialiased`}>
+    <html lang="en" className="h-full">
+      <body className={`${inter.className} min-h-screen flex flex-col bg-background antialiased`}>
         <QueryProvider>
           <Header />
-          <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+          <main className="flex-1 w-full px-4 py-6 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 max-w-[1920px] mx-auto">
             {children}
           </main>
           <Toaster position="top-right" richColors closeButton />

@@ -107,8 +107,8 @@ export default function ClassesPage() {
 
       {/* Loading Skeleton */}
       {isLoading && (
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {[1, 2, 3].map((i) => (
+        <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
+          {[1, 2, 3, 4, 5].map((i) => (
             <Card key={i}>
               <CardHeader>
                 <Skeleton className="h-6 w-3/4" />
@@ -142,7 +142,7 @@ export default function ClassesPage() {
 
       {/* Class Cards Grid */}
       {classes && classes.length > 0 && (
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
           {classes.map((cls: SchoolClass) => (
             <Card key={cls.id} className="flex flex-col overflow-hidden">
               {/* Class Header */}
