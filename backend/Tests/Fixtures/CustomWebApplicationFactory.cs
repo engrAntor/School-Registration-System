@@ -56,3 +56,4 @@ public class CustomWebApplicationFactory : WebApplicationFactory<Program>, IAsyn
         await base.DisposeAsync();
     }
 }
+

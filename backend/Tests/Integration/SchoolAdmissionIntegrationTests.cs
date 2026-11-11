@@ -158,3 +158,4 @@ public class SchoolAdmissionIntegrationTests : IClassFixture<CustomWebApplicatio
 // Supporting Response DTOs for type-safe assertions
 public record ClassResponseDto(string Id, string Name, int TotalSeats);
 public record ClassListResponseDto(string Id, string Name, int TotalSeats, int HeldSeats, int ConfirmedSeats, int AvailableSeats);
+
