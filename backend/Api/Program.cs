@@ -62,8 +62,8 @@ var admissionApi = app.MapGroup("/")
     {
         var httpContext = invocationContext.HttpContext;
 
-        // Skip header check for GET /classes (so the UI can load class lists without a student ID)
-        if (httpContext.Request.Path == "/classes" && httpContext.Request.Method == "GET")
+        // Skip header check for class queries/creation (admin or public actions)
+        if (httpContext.Request.Path == "/classes" && (httpContext.Request.Method == "GET" || httpContext.Request.Method == "POST"))
             return await next(invocationContext);
 
         if (!httpContext.Request.Headers.TryGetValue("X-Student-Id", out var studentIdVal) || studentIdVal.ToString().Length != 17)
@@ -229,6 +229,9 @@ admissionApi.MapGet("/me/holds", async (HttpContext ctx, AdmissionDbContext db) 
 });
 
 app.Run();
+
+// Make Program public for WebApplicationFactory in tests
+public partial class Program { }
 
 // DTO for Endpoint #1
 public record CreateClassDto(string Name, int TotalSeats);
