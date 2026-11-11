@@ -23,7 +23,7 @@ export default function RootLayout({
       <body className={`${inter.className} min-h-screen flex flex-col bg-background antialiased`}>
         <QueryProvider>
           <Header />
-          <main className="flex-1 w-full px-4 py-6 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 max-w-[1920px] mx-auto">
+          <main className="flex-1 w-full px-4 sm:px-6 lg:px-8 py-6">
             {children}
           </main>
           <Toaster position="top-right" richColors closeButton />
